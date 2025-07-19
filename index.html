@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoundMap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+</head>
+<body>
+  <header>
+    <h1 class="logo">SoundMap</h1>
+    <nav>
+      <ul>
+        <li><a href="#create">New Entry</a></li>
+        <li><a href="#map">SoundMap</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>Capture how you feel, where you are — through sound.</h2>
+      <button class="cta-button" onclick="scrollToCreate()">+ Start a Sound Memory</button>
+    </section>
+
+    <section id="create" class="create-entry">
+    <div id="tag-filters" class="tag-filters"></div>
+      <h3>Step 1: What are you feeling?</h3>
+      <div class="emotion-selector">
+        <button class="emotion-btn" data-emotion="peaceful">🩵 Peaceful</button>
+        <button class="emotion-btn" data-emotion="lost">🖤 Lost</button>
+        <button class="emotion-btn" data-emotion="hopeful">💛 Hopeful</button>
+      </div>
+      <h3>Step 2: Choose your sound loops</h3>
+      <div class="loop-selector">
+        <label><input type="checkbox" name="loops" value="lofi"> Lofi</label>
+        <label><input type="checkbox" name="loops" value="waves"> Ocean Waves</label>
+        <label><input type="checkbox" name="loops" value="wind"> Wind</label>
+      </div>
+      <h3>Step 3: Pin your location</h3>
+      <div id="map">[Map placeholder]</div>
+      <h3>Step 4: Write a note</h3>
+      <textarea id="note" placeholder="Your thoughts..." rows="4"></textarea>
+      <button class="save-entry" onclick="saveMemory()">Save to SoundMap</button>
+    </section>
+
+    <section id="map" class="sound-map">
+      <h2>Your SoundMap</h2>
+      <div id="soundmap-view">[Entries will appear here]</div>
+    </section>
+
+    <section id="about" class="about">
+      <h2>What is SoundMap?</h2>
+      <p>A journaling experiment that uses music and place to reflect your emotional journey. You don't need words — just your feeling and a sound.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by Rubs © 2025</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
