@@ -18,6 +18,7 @@
         <li><a href="#create">New Entry</a></li>
         <li><a href="#map">SoundMap</a></li>
         <li><a href="#about">About</a></li>
+        
       </ul>
     </nav>
   </header>
@@ -25,9 +26,14 @@
   <main>
     <section class="hero">
       <h2>Capture how you feel, where you are — through sound.</h2>
+      <input id="custom-emotion-input" type="text" placeholder="Add new emotion">
+      <button id="add-emotion-btn">➕ Add Emotion</button>
+      <div id="custom-emotions" class="emotion-custom-group"></div>
+
       <button class="cta-button" onclick="scrollToCreate()">+ Start a Sound Memory</button>
     </section>
 
+    <canvas id="emotionChart" width="400" height="200"></canvas>
     <section id="create" class="create-entry">
     <div id="tag-filters" class="tag-filters"></div>
       <h3>Step 1: What are you feeling?</h3>
@@ -37,11 +43,7 @@
         <button class="emotion-btn" data-emotion="hopeful">💛 Hopeful</button>
       </div>
       <h3>Step 2: Choose your sound loops</h3>
-      <div class="loop-selector">
-        <label><input type="checkbox" name="loops" value="lofi"> Lofi</label>
-        <label><input type="checkbox" name="loops" value="waves"> Ocean Waves</label>
-        <label><input type="checkbox" name="loops" value="wind"> Wind</label>
-      </div>
+      <div class="loop-selector"></div>
       <h3>Step 3: Pin your location</h3>
       <div id="map">[Map placeholder]</div>
       <h3>Step 4: Write a note</h3>
