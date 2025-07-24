@@ -8,52 +8,61 @@
   <link rel="stylesheet" href="./style.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header>
     <h1 class="logo">SoundMap</h1>
     <nav>
       <ul>
-        <li><a href="#create">New Entry</a></li>
-        <li><a href="#map">SoundMap</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#create">+ New Journey</a></li>
+        <li><a href="records.html">🗂️ Records</a></li>
         <li><a href="#about">About</a></li>
-        
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h2>Capture how you feel, where you are — through sound.</h2>
-      <input id="custom-emotion-input" type="text" placeholder="Add new emotion">
-      <button id="add-emotion-btn">➕ Add Emotion</button>
-      <div id="custom-emotions" class="emotion-custom-group"></div>
-
-      <button class="cta-button" onclick="scrollToCreate()">+ Start a Sound Memory</button>
+    <section id="home" class="hero">
+      <h2>Discover your emotional journey through sound and space.</h2>
+      <button class="cta-button" onclick="scrollToCreate()">+ Record a New Journey</button>
     </section>
 
-    <canvas id="emotionChart" width="400" height="200"></canvas>
     <section id="create" class="create-entry">
-    <div id="tag-filters" class="tag-filters"></div>
-      <h3>Step 1: What are you feeling?</h3>
+      <h2>Create a New Sound Memory</h2>
+
+      <canvas id="emotionChart" width="400" height="200"></canvas>
+
+      <div id="tag-filters" class="tag-filters"></div>
+
+      <h3>Step 1: How are you feeling?</h3>
       <div class="emotion-selector">
         <button class="emotion-btn" data-emotion="peaceful">🩵 Peaceful</button>
         <button class="emotion-btn" data-emotion="lost">🖤 Lost</button>
         <button class="emotion-btn" data-emotion="hopeful">💛 Hopeful</button>
       </div>
+
+      <div class="custom-emotion">
+        <input id="custom-emotion-input" type="text" placeholder="Add new emotion">
+        <button id="add-emotion-btn">➕ Add Emotion</button>
+        <div id="custom-emotions" class="emotion-custom-group"></div>
+      </div>
+
       <h3>Step 2: Choose your sound loops</h3>
       <div class="loop-selector"></div>
+
       <h3>Step 3: Pin your location</h3>
-      <div id="map">[Map placeholder]</div>
+
       <h3>Step 4: Write a note</h3>
       <textarea id="note" placeholder="Your thoughts..." rows="4"></textarea>
+
       <button class="save-entry" onclick="saveMemory()">Save to SoundMap</button>
     </section>
 
-    <section id="map" class="sound-map">
-      <h2>Your SoundMap</h2>
-      <div id="soundmap-view">[Entries will appear here]</div>
+    <section class="memory-view">
+      <h2>Your SoundMap Memories</h2>
+      <div id="soundmap-view"></div>
     </section>
 
     <section id="about" class="about">
@@ -66,6 +75,10 @@
     <p>Created by Rubs © 2025</p>
   </footer>
 
-  <script src="app.js"></script>
+  <!-- JS Scripts -->
+  <script src="script/app.js"></script>
+  <script src="script/sound.js"></script>
+  <script src="script/add.js"></script>
+
 </body>
 </html>

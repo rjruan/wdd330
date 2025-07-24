@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Journey | SoundMap</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <header>
+    <h1 class="logo">SoundMap</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="records.html">Your Records</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="create-entry">
+    <h2>Start a New Sound Journey</h2>
+
+    <section>
+      <h3>1. How do you feel?</h3>
+      <input id="custom-emotion-input" type="text" placeholder="Add your own emotion">
+      <button id="add-emotion-btn">Add</button>
+      <div class="emotion-selector">
+        <button class="emotion-btn" data-emotion="peaceful">🩵 Peaceful</button>
+        <button class="emotion-btn" data-emotion="lost">🖤 Lost</button>
+        <button class="emotion-btn" data-emotion="hopeful">💛 Hopeful</button>
+      </div>
+      <div id="custom-emotions" class="emotion-custom-group"></div>
+    </section>
+
+    <section>
+      <h3>2. Choose your sounds</h3>
+      <div id="loop-selector"></div>
+
+    </section>
+
+    <section>
+      <h3>3. Pin your location</h3>
+    </section>
+
+    <section>
+      <h3>4. Add a note</h3>
+      <textarea id="note" placeholder="Write a note..."></textarea>
+    </section>
+
+    <button class="save-entry" id="save-memory-btn">Save to SoundMap</button>
+  </main>
+
+  <footer>
+    <p>Created by Rubs © 2025</p>
+  </footer>
+
+  <script src="script/sound.js"></script>
+  <script src="script/add.js"></script>
+</body>
+</html>

@@ -41,7 +41,10 @@ function clearForm() {
 function renderMapView() {
   const container = document.getElementById("soundmap-view");
   const memories = JSON.parse(localStorage.getItem("soundmap") || "[]");
-  container.innerHTML = "";
+  
+  const el = document.getElementById("some-id");
+  if (el) el.innerHTML = "...";
+
   memories.forEach(mem => {
     const div = document.createElement("div");
     div.className = "memory-card";
@@ -177,6 +180,13 @@ document.querySelectorAll(".emotion-btn").forEach(btn => {
       input.checked = suggested.includes(input.value);
     });
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const map = L.map("map").setView([37.7749, -122.4194], 13);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap contributors"
+  }).addTo(map);
 });
 
 window.onload = function() {
