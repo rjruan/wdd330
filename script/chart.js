@@ -44,15 +44,15 @@ function getRandomColor() {
   return `hsl(${Math.floor(Math.random()*360)}, 70%, 60%)`;
 }
 
-// Attach to window load
-window.onload = function() {
-  renderMapView();
-  initMap();
-  loadSounds();
+document.addEventListener("DOMContentLoaded", () => {
+  if (typeof renderMapView === "function") renderMapView();
+  if (typeof initMap === "function") initMap();
+  if (typeof loadSounds === "function") loadSounds();
   renderEmotionChart();
+
   document.getElementById("add-emotion-btn").addEventListener("click", () => {
     const input = document.getElementById("custom-emotion-input");
     addCustomEmotion(input.value.trim());
     input.value = "";
   });
-};
+});

@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const noteInput = document.getElementById("note");
   const saveBtn = document.getElementById("save-memory-btn");
 
-
   let selectedEmotion = "";
   let selectedSounds = [];
   let selectedCoords = null;
@@ -48,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Init Leaflet map
-  const map = L.map("map-create").setView([37.7749, -122.4194], 13);
+  const map = L.map("map").setView([37.7749, -122.4194], 13); // Default SF
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution: "Map data © OpenStreetMap contributors"
   }).addTo(map);
@@ -63,8 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Save memory
   saveBtn.addEventListener("click", () => {
     selectedSounds = [...loopSelector.querySelectorAll("input:checked")].map(cb => cb.value);
-    console.log("Saving memory and redirecting...");
-
+    
 
     if (!selectedEmotion || !selectedCoords || selectedSounds.length === 0) {
       alert("Please complete all steps: emotion, sound, location.");

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,32 +32,25 @@
 
     <section id="create" class="create-entry">
       <h2>Create a New Sound Memory</h2>
-
       <canvas id="emotionChart" width="400" height="200"></canvas>
-
       <div id="tag-filters" class="tag-filters"></div>
-
       <h3>Step 1: How are you feeling?</h3>
       <div class="emotion-selector">
         <button class="emotion-btn" data-emotion="peaceful">🩵 Peaceful</button>
         <button class="emotion-btn" data-emotion="lost">🖤 Lost</button>
         <button class="emotion-btn" data-emotion="hopeful">💛 Hopeful</button>
       </div>
-
       <div class="custom-emotion">
         <input id="custom-emotion-input" type="text" placeholder="Add new emotion">
         <button id="add-emotion-btn">➕ Add Emotion</button>
         <div id="custom-emotions" class="emotion-custom-group"></div>
       </div>
-
       <h3>Step 2: Choose your sound loops</h3>
       <div class="loop-selector"></div>
-
       <h3>Step 3: Pin your location</h3>
-
+      <div id="map"></div>
       <h3>Step 4: Write a note</h3>
       <textarea id="note" placeholder="Your thoughts..." rows="4"></textarea>
-
       <button class="save-entry" onclick="saveMemory()">Save to SoundMap</button>
     </section>
 
@@ -75,10 +69,8 @@
     <p>Created by Rubs © 2025</p>
   </footer>
 
-  <!-- JS Scripts -->
-  <script src="script/app.js"></script>
   <script src="script/sound.js"></script>
-  <script src="script/add.js"></script>
-
+  <script src="script/app.js"></script>
+  <script src="script/chart.js"></script>
 </body>
 </html>
